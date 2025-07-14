@@ -1,0 +1,11 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+  <h2>Tem certeza que deseja deletar o tópico "{{ topic.text }}"?</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, deletar</button>
+    <a href="{% url 'topics' %}">Cancelar</a>
+  </form>
+{% endblock %}
